@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>single page
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/font.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/li-scroller.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/jquery.fancybox.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      .modal-header, h4, .close {
+          background-color: #5cb85c;
+          color:white !important;
+          text-align: center;
+          font-size: 30px;
+      }
+      .modal-footer {
+          background-color: #f9f9f9;
+      }
+      #box_morelink_detail{
+        display:none;
+      }
+      #box_topic_detail {
+        display:none;
+      }
+      </style>
+  <!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.min.js"></script>
+<script src="../assets/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <a class="scrollToTop" href="#">
+    <i class="fa fa-angle-up"></i>
+  </a>
+  <div class="container">
+    <header id="header">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="header_top">
+            <div class="header_top_left">
+              <ul class="top_nav">
+                <li>
+                  <a href="/index">Trang chủ</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header_top_right">
+              <ul class="top_nav">
+                  <li>
+                      <button type="button" class="btn btn-default btn-lg" id="myBtn">Đăng nhập</button>
+                    </li>
+                    <li>
+                      <button type="button" class="btn btn-default btn-lg" id="myBtnDangKy">Đăng ký</button>
+                    </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="header_bottom">
+            <div class="logo_area">
+              <a href="/index" class="logo">
+                <img src="../images/logo.jpg" alt="">
+              </a>
+            </div>
+            <div class="add_banner">
+              <a href="#">
+                <img src="../images/addbanner_728x90_V1.jpg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="navArea">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+            aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav main_nav">
+            <li class="active">
+              <a href="/index">
+                <span class="fa fa-home desktop-home"></span>
+                <span class="mobile-show">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="/thoi-su">Thời sự</a>
+            </li>
+            <li>
+              <a href="/the-gioi">Thế giới</a>
+            </li>
+            <li>
+              <a href="#">Góc nhìn</a>
+            </li>
+            <li>
+              <a href="/kinh-doanh">Kinh doanh</a>
+            </li>
+            <li>
+              <a href="/giao-duc" data-id="59">Giáo dục</a>
+            </li>
+            <li>
+              <a href="/the-thao">Thể thao</a>
+            </li>
+            <li>
+              <a href="/giai-tri">Giải trí</a>
+            </li>
+            <li>
+              <a href="/phap-luat">Pháp luật</a>
+            </li>
+            <li>
+              <a href="/suc-khoe">Sức khỏe</a>
+            </li>
+            <li>
+              <a href="/khoa-hoc">Khoa học</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <section id="newsSection">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="latest_newsarea">
+            <span>Tin tức</span>
+            <ul id="ticker01" class="news_sticker">
+              <%data.forEach((item)=>{%>
+                    <li>
+                      <a href="/noidung/<%-item._id%>">
+                        <img src="<%=item.Hinh%>" alt="">
+                        <%=item.TieuDe%>
+                      </a>
+                    </li>
+                    <%})%>
+            </ul>
+            <div class="social_area">
+              <ul class="social_nav">
+                <li class="facebook">
+                  <a href="#"></a>
+                </li>
+                <li class="twitter">
+                  <a href="#"></a>
+                </li>
+                <li class="flickr">
+                  <a href="#"></a>
+                </li>
+                <li class="pinterest">
+                  <a href="#"></a>
+                </li>
+                <li class="googleplus">
+                  <a href="#"></a>
+                </li>
+                <li class="vimeo">
+                  <a href="#"></a>
+                </li>
+                <li class="youtube">
+                  <a href="#"></a>
+                </li>
+                <li class="mail">
+                  <a href="#"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contentSection">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="left_content">
+            <div class="single_page">
+              <div class="single_page_content">
+                <%-baibao.NoiDung_html%> 
+              </div><h3>Nguồn tin</h3>
+                <%-baibao.Link%>
+              <div class="social_link">
+                <ul class="sociallink_nav">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-pinterest"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="related_post">
+                <h2>Tin cùng chuyên mục
+                  <i class="fa fa-thumbs-o-up"></i>
+                </h2>
+                <%TheLoai.slice(1,19).forEach((item)=>{%>
+                <ul class="spost_nav wow fadeInDown animated">
+                  <li>
+                    <div class="media">
+                      <a class="media-left" href="/noidung/<%-item._id%>">
+                        <img src="<%=item.Hinh%>" alt=""> </a>
+                      <div class="media-body">
+                        <a class="catg_title" href="/noidung/<%-item._id%>"><%=item.TieuDe.slice(0,50)%></a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <%})%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="nav-slit">
+          <a class="prev" href="#">
+            <span class="icon-wrap">
+              <i class="fa fa-angle-left"></i>
+            </span>
+            <div>
+              <h3>City Lights</h3>
+              <img src="../images/post_img1.jpg" alt="" /> </div>
+          </a>
+          <a class="next" href="#">
+            <span class="icon-wrap">
+              <i class="fa fa-angle-right"></i>
+            </span>
+            <div>
+              <h3>Street Hills</h3>
+              <img src="../images/post_img1.jpg" alt="" /> </div>
+          </a>
+        </nav>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <aside class="right_content">
+            <div class="single_sidebar">
+              <h2>
+                <span>Tin liên quan</span>
+              </h2>
+              <%data.slice(0,20).forEach((item)=>{%>
+              <ul class="spost_nav wow fadeInDown animated">
+                      <li>
+                        <div class="media wow fadeInDown">
+                          <a href="/noidung/<%-item._id%>" class="media-left">
+                            <img alt="" src="<%=item.Hinh%>"> </a>
+                          <div class="media-body">
+                            <a href="/noidung/<%-item._id%>" class="catg_title">
+                              <%=item.TieuDe%>
+                            </a>
+                          </div>
+                        </div>
+                      </li>
+              </ul>
+              <%})%>
+            </div>
+            <div class="single_sidebar">
+              <ul class="nav nav-tabs" role="tablist">
+              </ul>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="category">
+                </div>
+                <div role="tabpanel" class="tab-pane" id="video">
+                  <div class="vide_area">
+                    <iframe width="100%" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" frameborder="0"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="comments">
+                  <ul class="spost_nav">
+                    <li>
+                      <div class="media wow fadeInDown">
+                        <a href="single_page.ejs" class="media-left">
+                          <img alt="" src="../images/post_img1.jpg"> </a>
+                        <div class="media-body">
+                          <a href="single_page.ejs" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media wow fadeInDown">
+                        <a href="single_page.ejs" class="media-left">
+                          <img alt="" src="../images/post_img2.jpg"> </a>
+                        <div class="media-body">
+                          <a href="single_page.ejs" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media wow fadeInDown">
+                        <a href="single_page.ejs" class="media-left">
+                          <img alt="" src="../images/post_img1.jpg"> </a>
+                        <div class="media-body">
+                          <a href="single_page.ejs" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="media wow fadeInDown">
+                        <a href="single_page.ejs" class="media-left">
+                          <img alt="" src="../images/post_img2.jpg"> </a>
+                        <div class="media-body">
+                          <a href="single_page.ejs" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="single_sidebar wow fadeInDown">
+              <div class="single_sidebar wow fadeInDown">
+              </div>
+              <div class="single_sidebar wow fadeInDown">
+              </div>
+          </aside>
+          </div>
+        </div>
+    </section>
+    <footer id="footer">
+      <div class="footer_top">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="footer_widget wow fadeInLeftBig">
+              <h2>Flickr Images</h2>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="footer_widget wow fadeInDown">
+              <h2>Tag</h2>
+              <ul class="tag_nav">
+                <li>
+                  <a href="#">Games</a>
+                </li>
+                <li>
+                  <a href="#">Sports</a>
+                </li>
+                <li>
+                  <a href="#">Fashion</a>
+                </li>
+                <li>
+                  <a href="#">Business</a>
+                </li>
+                <li>
+                  <a href="#">Life &amp; Style</a>
+                </li>
+                <li>
+                  <a href="#">Technology</a>
+                </li>
+                <li>
+                  <a href="#">Photo</a>
+                </li>
+                <li>
+                  <a href="#">Slider</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="footer_widget wow fadeInRightBig">
+              <h2>Contact</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <address>
+                Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <p class="copyright">Copyright &copy; 2045
+          <a href="../index.ejs">NewsFeed</a>
+        </p>
+        <p class="developer">Developed By Wpfreeware</p>
+      </div>
+    </footer>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header" style="padding:35px 50px;">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4><span class="glyphicon glyphicon-lock"></span> Đăng Nhập</h4>
+            </div>
+            <div class="modal-body" style="padding:40px 50px;">
+              <form role="form" class="form-signin mg-btm" action="/dangnhap" method="post">
+                <div class="form-group">
+                  <label for="Email"><span class="glyphicon glyphicon-user"></span> Email</label>
+                  <input type="email" class="form-control" placeholder="Email" name="Email" autofocus>
+                </div>
+                <div class="form-group">
+                  <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Mật Khẩu</label>
+                  <input type="password" class="form-control" placeholder="Password" name="PassWord">
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="" checked>Remember me</label>
+                </div>
+                  <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Đăng Nhập</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+              <p>Not a member? <a href="#">Sign Up</a></p>
+              <p>Forgot <a href="#">Password?</a></p>
+            </div>
+          </div>
+          
+        </div>
+      </div> 
+  
+      <div class="modal fade" id="myModalDangKy" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header" style="padding:35px 50px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4><span class="glyphicon glyphicon-lock"></span>Đăng Ký</h4>
+              </div>
+              <div class="modal-body" style="padding:40px 50px;">
+                <form role="form" class="form-signin mg-btm" action="/dangky" method="post">
+                  <div class="form-group">
+                    <label for="TenKH"><span class="glyphicon glyphicon-user"></span> Họ Tên</label>
+                    <input type="text" class="form-control" placeholder="Họ Tên" name="TenKH" autofocus>
+                  </div>
+                  <div class="form-group">
+                    <label for="Email"><span class="glyphicon glyphicon-user"></span> Email</label>
+                    <input type="email" class="form-control" placeholder="Email" name="Email" autofocus>
+                  </div>
+                  <div class="form-group">
+                    <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Mật Khẩu</label>
+                    <input type="password" class="form-control" placeholder="Mật Khẩu" name="PassWord">
+                  </div>
+                  <div class="form-group">
+                    <label for="SDT"><span class="glyphicon glyphicon-user"></span> Số Điện Thoại</label>
+                    <input type="text" class="form-control" placeholder="SDT" name="SDT" autofocus>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="" checked>Remember me</label>
+                  </div>
+                    <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Đăng Ký</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <p>Not a member? <a href="#">Sign Up</a></p>
+                <p>Forgot <a href="#">Password?</a></p>
+              </div>
+            </div>
+            
+          </div>
+        </div> 
+      <script>
+          $(document).ready(function(){
+              $("#myBtn").click(function(){
+                $("#myModal").modal();
+              });
+          });
+              $(document).ready(function(){
+                  $("#myBtnDangKy").click(function(){
+                    $("#myModalDangKy").modal();
+                  });
+              });
+              </script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+    <script src="../assets/js/jquery.li-scroller.1.0.js"></script>
+    <script src="../assets/js/jquery.newsTicker.min.js"></script>
+    <script src="../assets/js/jquery.fancybox.pack.js"></script>
+    <script src="../assets/js/custom.js"></script>
+</body>
+
+</html>

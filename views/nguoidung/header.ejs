@@ -1,0 +1,140 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .modal-header,
+    h4,
+    .close {
+      background-color: #5cb85c;
+      color: white !important;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .modal-footer {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li>
+                <a href="/nguoimoi">Trang chủ</a>
+              </li>
+              <li>
+                <a href="/index">Quan tâm</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header_top_right">
+            <ul class="top_nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <% if (user.local.Email) { %>
+                    <%= user.local.TenKH %>
+                      <% if(user.local.TenKH == 'admin'){ %>
+                        <button>Chạy hệ thống</button>
+                        <%}%>
+                          <% } %>
+                            <% if (user.facebook.token) { %>
+                              <%= user.facebook.name %>
+                                <% } %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="/chontu">Từ Khóa Sở Thích</a>
+                  <a class="dropdown-item" href="/loigiday">Lịch sử</a>
+                  <a class="dropdown-item" href="/dangxuat">Thoát</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area">
+            <a href="/index" class="logo">
+              <img src="images/logo.jpg" alt="">
+            </a>
+          </div>
+          <div class="add_banner">
+            <a href="#">
+              <img src="images/addbanner_728x90_V1.jpg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav">
+          <li class="active">
+            <a href="/index">
+              <span class="fa fa-home desktop-home"></span>
+              <span class="mobile-show">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/thoisu">Thời sự</a>
+          </li>
+          <li>
+            <a href="/thegioi">Thế giới</a>
+          </li>
+          <li>
+            <a href="gocnhin">Góc nhìn</a>
+          </li>
+          <li>
+            <a href="/kinhdoanh">Kinh doanh</a>
+          </li>
+          <li>
+            <a href="/giaoduc">Giáo dục</a>
+          </li>
+          <li>
+            <a href="/thethao">Thể thao</a>
+          </li>
+          <li>
+            <a href="/giaitri">Giải trí</a>
+          </li>
+          <li>
+            <a href="/phapluat">Pháp luật</a>
+          </li>
+          <li>
+            <a href="/suckhoe">Sức khỏe</a>
+          </li>
+          <li>
+            <a href="/khoahoc">Khoa học</a>
+          </li>
+          <li>
+            <a href="/xeco">Xe cộ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+</body>
+
+</html>

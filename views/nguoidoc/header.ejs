@@ -1,0 +1,209 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      .modal-header, h4, .close {
+          background-color: #5cb85c;
+          color:white !important;
+          text-align: center;
+          font-size: 30px;
+      }
+      .modal-footer {
+          background-color: #f9f9f9;
+      }
+      </style>
+</head>
+
+<body>
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li>
+                <a href="/index">Trang chủ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header_top_right">
+            <ul class="top_nav">
+              <li>
+                <button type="button" class="btn btn-default btn-lg" id="myBtn">Đăng nhập</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-default btn-lg" id="myBtnDangKy">Đăng ký</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+          <div class="logo_area">
+            <a href="/index" class="logo">
+              <img src="images/logo.jpg" alt="">
+            </a>
+          </div>
+          <div class="add_banner">
+            <a href="#">
+              <img src="images/addbanner_728x90_V1.jpg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav main_nav">
+          <li class="active">
+            <a href="/index">
+              <span class="fa fa-home desktop-home"></span>
+              <span class="mobile-show">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/thoi-su">Thời sự</a>
+          </li>
+          <li>
+            <a href="/the-gioi">Thế giới</a>
+          </li>
+          <li>
+            <a href="goc-nhin">Góc nhìn</a>
+          </li>
+          <li>
+            <a href="/kinh-doanh">Kinh doanh</a>
+          </li>
+          <li>
+            <a href="/giao-duc">Giáo dục</a>
+          </li>
+          <li>
+            <a href="/the-thao">Thể thao</a>
+          </li>
+          <li>
+            <a href="/giai-tri">Giải trí</a>
+          </li>
+          <li>
+            <a href="/phap-luat">Pháp luật</a>
+          </li>
+          <li>
+            <a href="/suc-khoe">Sức khỏe</a>
+          </li>
+          <li>
+            <a href="/khoa-hoc">Khoa học</a>
+          </li>
+          <li>
+            <a href="/xe-co">Xe cộ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4><span class="glyphicon glyphicon-lock"></span> Đăng Nhập</h4>
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <form role="form" class="form-signin mg-btm" action="/dangnhap" method="post">
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+                <input type="email" class="form-control" placeholder="Email" name="Email" autofocus>
+              </div>
+              <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Mật Khẩu</label>
+                <input type="password" class="form-control" placeholder="Password" name="PassWord">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="" checked>Remember me</label>
+              </div>
+                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Đăng Nhập</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+            <p>Not a member? <a href="#">Sign Up</a></p>
+            <p>Forgot <a href="#">Password?</a></p>
+          </div>
+        </div>
+        
+      </div>
+    </div> 
+
+    <div class="modal fade" id="myModalDangKy" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header" style="padding:35px 50px;">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4><span class="glyphicon glyphicon-lock"></span>Đăng Ký</h4>
+            </div>
+            <div class="modal-body" style="padding:40px 50px;">
+              <form role="form" class="form-signin mg-btm" action="/dangky" method="post">
+                <div class="form-group">
+                  <label for="TenKH"><span class="glyphicon glyphicon-user"></span> Họ Tên</label>
+                  <input type="text" class="form-control" placeholder="Họ Tên" name="TenKH" autofocus>
+                </div>
+                <div class="form-group">
+                  <label for="Email"><span class="glyphicon glyphicon-user"></span> Email</label>
+                  <input type="email" class="form-control" placeholder="Email" name="Email" autofocus>
+                </div>
+                <div class="form-group">
+                  <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Mật Khẩu</label>
+                  <input type="password" class="form-control" placeholder="Mật Khẩu" name="PassWord">
+                </div>
+                <div class="form-group">
+                  <label for="SDT"><span class="glyphicon glyphicon-user"></span> Số Điện Thoại</label>
+                  <input type="text" class="form-control" placeholder="SDT" name="SDT" autofocus>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" value="" checked>Remember me</label>
+                </div>
+                  <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Đăng Ký</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+              <p>Not a member? <a href="#">Sign Up</a></p>
+              <p>Forgot <a href="#">Password?</a></p>
+            </div>
+          </div>
+          
+        </div>
+      </div> 
+    <script>
+        $(document).ready(function(){
+            $("#myBtn").click(function(){
+              $("#myModal").modal();
+            });
+        });
+            $(document).ready(function(){
+                $("#myBtnDangKy").click(function(){
+                  $("#myModalDangKy").modal();
+                });
+            });
+            </script>
+</body>
+
+</html>
